@@ -1,0 +1,2 @@
+import test from 'node:test'; import assert from 'node:assert/strict'; import pkg from '../package.json' with { type: 'json' };
+test('manifest is a light peer-only DSH plugin', () => { assert.equal(pkg.version, '0.1.0'); assert.equal(pkg.dsh.plugin, true); assert.ok(pkg.keywords.includes('dsh-plugin')); assert.equal(pkg.dependencies, undefined); assert.equal(pkg.peerDependencies['react-dom'], '>=18.2.0'); for (const range of Object.values(pkg.peerDependencies)) assert.match(range, /^>=/); });
