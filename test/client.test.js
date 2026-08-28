@@ -15,6 +15,11 @@ test('shadows nothing: no lineage/composer registration, no official module id',
   assert.doesNotMatch(source, /@deepseek-ai\/dsh-client-ui-subagent/);
 });
 
+test('reads the wire projection via the standard useProjection seat', () => {
+  assert.match(source, /useProjection\("subagentRouteBadge"\)/);
+  assert.doesNotMatch(source, /session\.projectionValues/);
+});
+
 test('unknown route degrades to a visible placeholder with accessible labels', () => {
   assert.match(source, /路由未知/);
   assert.match(source, /aria-label/);

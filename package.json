@@ -1,6 +1,6 @@
 {
   "name": "dsh-subagent-route-badges",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "在 DSH 已打开子代理的 Header 展示 provider、model 和 reasoning effort",
   "type": "module",
   "main": "./lib/index.js",

@@ -6,7 +6,7 @@ import pkg from '../package.json' with { type: 'json' };
 const require = createRequire(import.meta.url);
 
 test('manifest is a light DSH plugin bundle with web client', () => {
-  assert.equal(pkg.version, '0.2.0');
+  assert.equal(pkg.version, '0.2.1');
   assert.equal(pkg.dsh.plugin, true);
   assert.ok(pkg.keywords.includes('dsh-plugin'));
   assert.equal(pkg.dsh.client.platform, 'web');
