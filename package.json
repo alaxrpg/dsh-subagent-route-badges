@@ -1,7 +1,7 @@
 {
   "name": "dsh-subagent-route-badges",
-  "version": "0.1.1",
-  "description": "在 DSH 子代理目录与 Header 展示 provider、model 和 reasoning effort",
+  "version": "0.2.0",
+  "description": "在 DSH 已打开子代理的 Header 展示 provider、model 和 reasoning effort",
   "type": "module",
   "main": "./lib/index.js",
   "exports": { ".": "./lib/index.js", "./client": "./lib/client.js", "./route-metadata": "./lib/route-metadata.js", "./package.json": "./package.json" },
@@ -9,14 +9,13 @@
   "scripts": { "check": "node --check lib/index.js && node --check lib/route-metadata.js && node --check lib/client.js", "test": "node --test" },
   "keywords": ["dsh-plugin", "deepseek-harness", "subagent"],
   "license": "MIT",
-  "dsh": { "plugin": true, "bundle": { "patch": "./cordis.patch.yml" }, "client": { "inject": ["@deepseek-ai/dsh-client-runtime", "@deepseek-ai/dsh-client-ui-slots", "@deepseek-ai/dsh-client-ui-primitives", "@deepseek-ai/dsh-client-ui-conversation", "@deepseek-ai/dsh-client-ui-subagent"], "platform": "web" } },
+  "dsh": { "plugin": true, "bundle": { "patch": "./cordis.patch.yml" }, "client": { "inject": ["@deepseek-ai/dsh-client-runtime", "@deepseek-ai/dsh-client-ui-slots", "@deepseek-ai/dsh-client-ui-conversation"], "platform": "web" } },
   "peerDependencies": {
     "@deepseek-ai/cordis": ">=4.0.1",
     "@deepseek-ai/dsh-client-runtime": ">=0.1.1-rc.2",
-    "@deepseek-ai/dsh-client-ui-primitives": ">=0.1.1-rc.2",
+    "@deepseek-ai/dsh-client-ui-conversation": ">=0.1.1-rc.2",
     "@deepseek-ai/dsh-session-projection": ">=0.1.1-rc.2",
-    "react": ">=18.2.0",
-    "react-dom": ">=18.2.0"
+    "react": ">=18.2.0"
   },
   "engines": { "node": ">=20" }
 }

@@ -6,7 +6,7 @@ import pkg from '../package.json' with { type: 'json' };
 const require = createRequire(import.meta.url);
 
 test('manifest is a light DSH plugin bundle with web client', () => {
-  assert.equal(pkg.version, '0.1.1');
+  assert.equal(pkg.version, '0.2.0');
   assert.equal(pkg.dsh.plugin, true);
   assert.ok(pkg.keywords.includes('dsh-plugin'));
   assert.equal(pkg.dsh.client.platform, 'web');
@@ -27,9 +27,9 @@ test('host interfaces and react live in peerDependencies with >= ranges only', (
   assert.equal(pkg.dependencies, undefined);
   assert.ok(peers['@deepseek-ai/cordis']);
   assert.ok(peers['@deepseek-ai/dsh-client-runtime']);
-  assert.ok(peers['@deepseek-ai/dsh-client-ui-primitives']);
+  assert.ok(peers['@deepseek-ai/dsh-client-ui-conversation']);
   assert.ok(peers['@deepseek-ai/dsh-session-projection']);
   assert.equal(peers.react, '>=18.2.0');
-  assert.equal(peers['react-dom'], '>=18.2.0');
+  assert.equal(peers['react-dom'], undefined);
   for (const range of Object.values(peers)) assert.match(range, /^>=/);
 });
